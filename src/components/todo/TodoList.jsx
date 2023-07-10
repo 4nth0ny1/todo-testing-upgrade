@@ -1,7 +1,19 @@
-export default function TodoList() {
+export default function TodoList({ items = [] }) {
   return (
-    <div>
-      <h1>TodoList</h1>
+    <div data-testid="TodoList">
+      {items.length ? (
+        <div>
+          {items.map((item) => {
+            return (
+              <ul key={item.id}>
+                <li>{item.content}</li>
+              </ul>
+            );
+          })}
+        </div>
+      ) : (
+        <div data-testid="no-items">There are no items in your list.</div>
+      )}
     </div>
   );
 }
