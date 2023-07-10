@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import CreateTodo from "../ui/CreateTodo";
+import CreateTodo from "../components/todo/CreateTodo";
 
 describe("<CreateTodo Tests />", () => {
   test("it should mount", () => {
