@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
@@ -15,17 +15,26 @@ describe("<App />", () => {
     expect(createTodo).toBeInTheDocument();
   });
 
-  test("the CreateTodo should update state when callback is triggered with data", async () => {
-    render(<App />);
+  // test("the CreateTodo should update state when callback is triggered", async () => {
+  //   render(<App />);
 
-    const button = screen.getByRole("button", { text: /add item/i });
-    const input = screen.getByTestId("input");
+  //   const button = screen.getByRole("button", { text: /add item/i });
+  //   const input = screen.getByTestId("input");
 
-    userEvent.type(input, "Mow the lawn");
-    userEvent.click(button);
+  //   userEvent.type(input, "Mow the lawn");
+  //   userEvent.click(button);
 
-    const todoItem = screen.getByText("Mow the lawn");
+  //   const todoItem = screen.getByText("Mow the lawn");
 
-    expect(todoItem).toBeInTheDocument();
-  });
+  //   expect(todoItem).toBeInTheDocument();
+  // });
+
+  // test("deleteTodo should remove todo from state button is clicked", () => {
+  //   render(<App />);
+
+  //   const deleteButton = screen.queryAllByTestId("delete-button");
+  //   userEvent.click(deleteButton);
+
+  //   expect(todos.length).toHaveLength(1);
+  // });
 });

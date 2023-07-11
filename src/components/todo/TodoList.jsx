@@ -1,12 +1,14 @@
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ todos }) {
+export default function TodoList({ todos, deleteTodo }) {
   return (
     <>
       {todos.length ? (
         <div data-testid="TodoList">
           {todos.map((todo) => {
-            return <TodoItem key={todo.id} todo={todo} />;
+            return (
+              <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
+            );
           })}
         </div>
       ) : (
