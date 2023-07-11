@@ -1,8 +1,9 @@
 export default function TodoItem({ todo }) {
+  const { id, content } = todo;
   return (
     <div data-testid="TodoItem">
       <p data-testid="content">
-        {todo.id}: {todo.content}
+        {id}: {content}
       </p>
     </div>
   );
