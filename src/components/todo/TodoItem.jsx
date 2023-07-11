@@ -1,7 +1,7 @@
-export default function TodoItem() {
+export default function TodoItem({ todo }) {
   return (
     <div data-testid="TodoItem">
-      <h1>TodoItem</h1>
+      <p data-testid="content">{todo.content}</p>
     </div>
   );
 }

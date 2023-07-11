@@ -1,19 +1,17 @@
-export default function TodoList({ items = [] }) {
+import TodoItem from "./TodoItem";
+
+export default function TodoList({ todos }) {
   return (
-    <div data-testid="TodoList">
-      {items.length ? (
-        <div>
-          {items.map((item) => {
-            return (
-              <ul key={item.id}>
-                <li>{item.content}</li>
-              </ul>
-            );
+    <>
+      {todos.length ? (
+        <div data-testid="TodoList">
+          {todos.map((todo) => {
+            return <TodoItem key={todo.id} todo={todo} />;
           })}
         </div>
       ) : (
-        <div data-testid="no-items">There are no items in your list.</div>
+        <div data-testid="no-todos">Create your first todo</div>
       )}
-    </div>
+    </>
   );
 }
